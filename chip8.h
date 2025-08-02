@@ -1,5 +1,5 @@
-#ifndef CHIP8
-#define CHIP8
+#ifndef CHIP8_H
+#define CHIP8_H
 
 typedef struct{
 	unsigned char  memory[4096];
@@ -13,5 +13,9 @@ typedef struct{
 	unsigned short opcode;
 	unsigned char  delay_timer;
 	unsigned char  sound_timer;
+	unsigned char  draw_flag;
 }Chip8;
 
+void emulationCycle(Chip8* chip8);
+
+#endif
